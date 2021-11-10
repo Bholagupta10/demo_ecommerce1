@@ -1,0 +1,42 @@
+<% provide(:title,("Products")) %>
+
+  <p id="notice"><%= notice %></p>
+
+  <div class="text-center">
+
+      <strong>Products ( <%= @product.count %> )</strong>
+
+  </div>
+  <%= render 'shared/products' %>
+
+<%# <h1>Products</h1> %>
+<%# center jumbotron text in the block and color%>
+<%# it allcated in the center  %>
+<%# <h1 class="text-center">Products</h1> %>
+<%# <%= render 'products/form' %> 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<br>
+<br>
+<br>
+<ul class="hmenu">
+    <li><A HREF = "_show.html.erb">laptop</A></li>
+    <br>
+    <li><A HREF = "http://www.google.com/">Google Search Engine</A></li>
+
+</ul>
+
+<table class="table table-hover table-striped table-bordered">
+  <thead class="table-dark">
+    <tr>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @product.each do |user| %>
+      <tr>
+        <td><%= user.name%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

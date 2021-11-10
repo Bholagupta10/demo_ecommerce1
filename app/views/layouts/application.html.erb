@@ -22,11 +22,11 @@
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="#">New</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+            Brand
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">Action</a></li>
@@ -62,13 +62,15 @@
       <%= link_to current_user.email, edit_user_registration_path %>
       <%= link_to "Log out", destroy_user_session_path, method: :delete %>
     <% else %>
-      <%= link_to "Log in", new_user_session_path %>
-      <%= link_to "Register", new_user_registration_path %>
+      <%# <%= link_to "Log in", new_user_session_path  %>
+      <%# <%= link_to "Register", new_user_registration_path  %>
+      <%# <%= link_to "Products", new_user_registration_path  %>
     <% end %>
 
       <ul class="hmenu">
-        <%= render 'devise/menu/registration_items' %>
-        <%= render 'devise/menu/login_items' %>
+        <%# <%= render 'devise/menu/registration_items' %> 
+        <%# <%= render 'devise/menu/login_items' %> 
+        <%# <%= render 'products/form' %>
       </ul>
 
     <%= yield %>

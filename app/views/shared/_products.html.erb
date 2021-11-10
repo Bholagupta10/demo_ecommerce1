@@ -1,0 +1,43 @@
+<div class="center jumbotron">
+  <h2>
+    <% if params[:search].blank?  %>
+      All Products (<%= @product.count %>)
+    <%else %>
+      Found => [
+      <%= pluralize(@product.count, " ] Product") %>
+    <%end %>
+  </h2>
+
+<!-- Search Bar -->
+<%= form_tag(root_url, :method => "get", id: "search-form") do %>
+<div class="input-group" id="adv-search">
+  <%= text_field_tag :search, params[:search], placeholder: "Search..." , class: "form-control" %>
+  <div class="input-group-btn">
+    <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+    <span class="glyphicon glyphicon-search"></span>
+  <% end %>
+  </div>
+</div>
+<% end %>
+
+
+
+<ul class="users">
+<% if @product.present? %>
+<%= render @product %>
+<%# @products.each do |product| %>
+<%#= render 'shared/product' , product: product %>
+  <%# end %>
+  </ul>
+
+  <%= will_paginate @product %>
+<% else %>
+  <p>
+    <br/><br/><hr/>
+    There are no products containing the term(s) => [
+    <strong><%= params[:search] %></strong>
+    ] .
+
+  </p>
+<% end %>
+<br>
