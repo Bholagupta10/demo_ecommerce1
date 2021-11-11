@@ -7,3 +7,5 @@ class Product < ApplicationRecord
         where('name LIKE ?', "%#{search}%")
       end
 end
+
+
