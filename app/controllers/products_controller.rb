@@ -30,7 +30,7 @@ class ProductsController < ApplicationController
 
   # The new action instantiates a new article, but does not save it. This article will 
   # be used in the view when building the form. By default, the new action will render
-  def new()
+  def new
     @product = Product.new
     
   end
