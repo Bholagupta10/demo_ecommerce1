@@ -1,33 +1,26 @@
 class ProductsController < ApplicationController
 
-  before_action  :set_product, only: %i[show edit update destroy]
-  before_action  :user_is_admin, only: %i[create edit update destroy]
 
   def index
     @products = Product.all
     # redirect_to root_url
   end
   
-    def show
-      @product = Product.find(params[:id])
-    end
- 
-    def new
-      @product = Product.new
-      
-    end
+  def show
+    @product = Product.find(params[:id])
+  end
+
+  def new
+    @product = Product.new
+  end
 
   def create
     @product = Product.new(product_params)
-    # respond_to do |format|
-      if @product.save
-        # product_save_success_response(format,
-        #                               'Product was successfully created.')
-        redirect_to @product
-      else
-        # product_save_failure_response(format, :new)
-        render :new
-      end
+    if @product.save
+      redirect_to products_path
+    else
+      render :new
+    end
   end
 
 

@@ -2,7 +2,6 @@
   <div>
     <%= form.label :name  %><br>
     <%= form.text_field :title %>
-    <% product.errors.full_messages_for(:title).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
@@ -10,17 +9,14 @@
   <div>
     <%= form.label :details %><br>
     <%= form.text_area :body %><br>
-    <% product.errors.full_messages_for(:body).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
 
 
-
  <div>
     <%= form.label :quantity  %><br>
     <%= form.text_field :title %>
-    <% product.errors.full_messages_for(:title).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
@@ -30,7 +26,6 @@
  <div>
     <%= form.label :brand  %><br>
     <%= form.text_field :title %>
-    <% product.errors.full_messages_for(:title).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
@@ -40,7 +35,6 @@
  <div>
     <%= form.label :price  %><br>
     <%= form.text_field :title %>
-    <% product.errors.full_messages_for(:title).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
