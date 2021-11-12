@@ -3,29 +3,28 @@
 <%= render "form", product: @product %> 
 <h1>New Product</h1>
 
-<%# <%= render 'form', product: @product %> 
+<%# <%= render 'form', product: @product  %>
 <%= form_with model: @product do |form| %>
     <div>
         <%= form.label :name  %><br>
         <%= form.text_field :name %>
     </div>
     <div>
-            <%= form.label :details   %><br>
-            <%= form.text_area :details  %>
-        </div>
-    <div>
-        <%= form.label :quantity  %><br>
-        <%= form.text_field :quanity %>
+        <%= form.label :details%> <br>
+        <%= form.text_area :details%>
     </div>
     <div>
-        <%= form.label :brand  %><br>
-        <%= form.text_field :title %>
+        <%= form.label :quanity%> <br>
+        <%= form.text_field :quanity%>
     </div>
-        <div>
-        <%= form.label :price  %><br>
-        <%= form.text_field :title %>
+     <div>
+        <%= form.label :brand%> <br>
+        <%= form.text_field :brand%>
     </div>
     <div>
+        <%= form.label :price%>  <br>
+        <%= form.text_field :price%>
+    </div>
     <%= form.submit %>
     </div>
 
