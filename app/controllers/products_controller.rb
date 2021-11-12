@@ -1,20 +1,16 @@
 class ProductsController < ApplicationController
   http_basic_authenticate_with name: "products", password: "secret", except: [:index, :show]
 
-
   def index
     @products = Product.all
     # redirect_to root_url
-  end
-  
+  end  
   def show
     @product = Product.find(params[:id])
   end
-
   def new
     @product = Product.new
   end
-
   def create
     @product = Product.new(product_params)
     if @product.save
@@ -23,22 +19,19 @@ class ProductsController < ApplicationController
       render :new
     end
   end
-
-
-  def edit
-    @product = Product.find(params[:id])
-  end
-
   def update
     @product = Product.find(params[:id])
       if @product.update(product_params)
-        # product_save_success_response(format,
-        #                               'Product was successfully updated.')
+        product_save_success_response(format,
+                                      'Product was successfully updated.')
          redirect_to @product
       else
         # product_save_failure_response(format, :edit)
         render :edit
       end
+  end
+  def edit
+    @product = Product.find(params[:id])
   end
 
   # def destroy
@@ -53,8 +46,6 @@ class ProductsController < ApplicationController
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
-    
-    
     redirect_to root_path
   end
 
