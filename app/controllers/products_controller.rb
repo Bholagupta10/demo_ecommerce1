@@ -19,6 +19,9 @@ class ProductsController < ApplicationController
       render :new
     end
   end
+  def edit
+    @product = Product.find(params[:id])
+  end
   def update
     @product = Product.find(params[:id])
       if @product.update(product_params)
@@ -29,9 +32,6 @@ class ProductsController < ApplicationController
         # product_save_failure_response(format, :edit)
         render :edit
       end
-  end
-  def edit
-    @product = Product.find(params[:id])
   end
 
   # def destroy
