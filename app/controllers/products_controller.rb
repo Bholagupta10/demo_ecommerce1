@@ -4,13 +4,16 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
     # redirect_to root_url
-  end  
+  end 
+
   def show
     @product = Product.find(params[:id])
   end
+
   def new
     @product = Product.new
   end
+
   def create
     @product = Product.new(product_params)
     if @product.save
@@ -19,9 +22,11 @@ class ProductsController < ApplicationController
       render :new
     end
   end
+
   def edit
     @product = Product.find(params[:id])
   end
+
   def update
     @product = Product.find(params[:id])
       if @product.update(product_params)
