@@ -26,6 +26,35 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
+
+    <div>
+        <%= f.label :role %><br />
+        <%= f.text_field :role, autofocus: true %>
+    </div>
+
+
+
+  <div>
+    <h6>First Name</h6>
+     <%# <%= f.label :name %>
+     <%# <br /> %>
+     <%= f.text_field :name, autofocus: true %>
+  </div>
+
+    <div>
+      <%# <%= f.label :name %>
+      <h6>Last Name </h6>
+      <%# <br /> %>
+      <%= f.text_field :lastname, autofocus: true %>
+    </div>
+    
+   <div>
+     <h6>Mobile Nmuber</h6>
+      <%# <%= f.label :mobile %> %>
+      <%# <br /> %>
+      <%= f.text_field :mobile, autofocus: true %>
+    </div>
+
   <div class="field">
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>

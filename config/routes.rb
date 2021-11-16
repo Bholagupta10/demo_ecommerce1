@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'users/index'
   devise_for :users
+  # resources :users
   root to: "products#index"
   # get 'products/index'
   # devise_for :products 
