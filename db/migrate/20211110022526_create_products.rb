@@ -7,8 +7,8 @@ class CreateProducts < ActiveRecord::Migration[6.1]
       t.string  :details
       t.string :brand
 
-
       t.timestamps
+      t.references :user
     end
   end
 end

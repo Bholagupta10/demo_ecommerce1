@@ -3,7 +3,13 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
-    # redirect_to root_url
+    # # redirect_to root_url
+    # if @product.buyers
+    #   @products = Product.all
+    # else  
+    #   @product = Products.sellers
+    # end
+
   end 
 
   def show

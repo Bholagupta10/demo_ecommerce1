@@ -11,5 +11,12 @@ class User < ApplicationRecord
   # def full_name
   #   "#{first_name} #{last_name}"
   # end
+  # has_many :products, dependent: :destroy
+
+  has_many :product, class_name: 'Product', foreign_key: :user_id 
+  # has_one :user_id
 
 end
+
+
+

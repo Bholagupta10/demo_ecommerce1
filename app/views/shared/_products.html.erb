@@ -35,13 +35,13 @@ Create New Product (Admin)
 
 <ul class="users">
 <% if @products.present? %>
-<%# <%= render @products %> %>
+<%= render @products %>
 <%# @products.each do |product| %>
 <%#= render 'shared/product' , product: product %>
   <%# end %>
   </ul>
 
-  <%# <%= will_paginate @products %> %>
+  <%= will_paginate @products %>
 <% else %>
   <p>
     <br/><br/><hr/>
