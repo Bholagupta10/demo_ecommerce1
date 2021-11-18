@@ -2,14 +2,11 @@ class ProductsController < ApplicationController
   http_basic_authenticate_with name: "products", password: "secret", except: [:index, :show]
 
   def index
-    @products = Product.all
-    # # redirect_to root_url
-    # if @product.buyers
-    #   @products = Product.all
-    # else  
-    #   @product = Products.sellers
-    # end
-
+    if current_user.role == 'Buyer'
+      @products = Product.all
+    else
+      @products = current_user.products
+    end
   end 
 
   def show
@@ -79,7 +76,7 @@ class ProductsController < ApplicationController
   # end
 
   def product_params
-    params.require(:product).permit(:name, :quanity, :brand, :details, :price)
+    params.require(:product).permit(:user_id,:name, :quanity, :brand, :details, :price)
   end
 
 end

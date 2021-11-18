@@ -6,6 +6,10 @@
 <%# <%= render 'form', product: @product  %>
 <%= form_with model: @product do |form| %>
     <div>
+        <%= form.label :userid%>  <br>
+        <%= form.text_field :user_id%>
+    </div>
+    <div>
         <%= form.label :name  %><br>
         <%= form.text_field :name %>
     </div>
@@ -27,6 +31,8 @@
     </div>
     <%= form.submit %>
     </div>
+
+    
 
 <% end %>
 <br>
