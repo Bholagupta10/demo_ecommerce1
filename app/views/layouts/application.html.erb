@@ -16,7 +16,7 @@
 
     <% if user_signed_in?%>
       <%= link_to current_user.email, edit_user_registration_path %>
-      <%= button_to "Log out", destroy_user_session_path, method: :delete %>
+      <%= button_to "Log out", destroy_user_session_path, method: :delete  %>
     <% else %>
       <%= link_to "Log in", new_user_session_path %> 
       <%= link_to "Register", new_user_registration_path %>
@@ -25,7 +25,6 @@
       <ul class="hmenu" style="text-align:left">
         <%= render 'devise/menu/registration_items' %>
         <%= render 'devise/menu/login_items' %>
-        <%# <%= render 'products/form' %>
       </ul>
 
     <%= yield %>

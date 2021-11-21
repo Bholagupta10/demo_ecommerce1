@@ -19,6 +19,4 @@
 
  <p> <%= @product.price%> </p>
  
-<%# <%= link_to "laptop" , @products%> 
-<%# <input type=button onClick="parent.location='laptop.html.erb'"
- value='click here'> %>
+ <p><%= button_to "Buy now", buy_now_product_path(@product) %> </p>

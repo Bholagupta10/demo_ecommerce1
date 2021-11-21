@@ -15,7 +15,6 @@ class StaticPagesController < ApplicationController
       def contact; end
     
       private
-    
       def fetch_products
         @products = if params[:search]
                       Product.search(params[:search])
@@ -25,8 +24,7 @@ class StaticPagesController < ApplicationController
                       Product.order('created_at ASC')
                              .paginate(page: params[:page], per_page: 5)
                     end
-      end
-    
+      end 
 end
 
 

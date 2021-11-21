@@ -1,39 +1,36 @@
-<%# <h1>Product</h1>
-
-<%= render "form", product: @product %> 
 <h1>New Product</h1>
-
-<%# <%= render 'form', product: @product  %>
 <%= form_with model: @product do |form| %>
     <div>
         <%= form.label :userid%>  <br>
         <%= form.text_field :user_id%>
     </div>
+
     <div>
         <%= form.label :name  %><br>
         <%= form.text_field :name %>
     </div>
+
     <div>
         <%= form.label :details%> <br>
         <%= form.text_area :details%>
     </div>
+
     <div>
         <%= form.label :quanity%> <br>
         <%= form.text_field :quanity%>
     </div>
+
      <div>
         <%= form.label :brand%> <br>
         <%= form.text_field :brand%>
     </div>
+    
     <div>
         <%= form.label :price%>  <br>
         <%= form.text_field :price%>
     </div>
     <%= form.submit %>
     </div>
-
-    
-
 <% end %>
 <br>
 <%= link_to 'Back', products_path %>
