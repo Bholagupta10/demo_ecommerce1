@@ -13,7 +13,12 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.update_column(:quanity, @product.quanity-1)
     redirect_to products_path
-
+  end
+  
+  def add_now
+    @product = Product.find(params[:id])
+    @product.update_column(:quanity, @product.quanity+1)
+    redirect_to products_path
   end
 
   def show

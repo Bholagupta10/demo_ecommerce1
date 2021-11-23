@@ -1,3 +1,5 @@
+<div class="text-center">
+
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -10,9 +12,9 @@
   
   <div class="field">
       <%= f.label :role %><br />
-      <%= f.text_field :role, autofocus: true %>
+		 <%= f.select :role, ['Seller','Buyer'], selected: 'Seller' %>
   </div>
-
+  
   <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
@@ -32,3 +34,4 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
