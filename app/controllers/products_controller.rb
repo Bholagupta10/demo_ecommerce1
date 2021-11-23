@@ -44,10 +44,10 @@ class ProductsController < ApplicationController
 
   def update
     @product = Product.find(params[:id])
-      if @product.update(product_params)
-        product_save_success_response(format,
+    if @product.update(product_params)
+      product_save_success_response(format,
                                       'Product was successfully updated.')
-         redirect_to @product
+        redirect_to @product
       else
         # product_save_failure_response(format, :edit)
         render :edit

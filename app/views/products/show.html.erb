@@ -20,10 +20,11 @@
  <p> <%= @product.price%> </p>
  
  <p><%= button_to "Buy now", buy_now_product_path(@product) %> </p>
+ <p><%= button_to "Add to cart", carts_path %> </p>
 
- <p><%= button_to "Add to cart", add_item_cart_path  %>
+
     
 
- <% if current_user.role == 'Seller' %>
-    <p><%= button_to "Add more quantity", add_now_product_path(@product) %> </p>
+<% if current_user.role == 'Seller' %>
+  <p><%= button_to "Add more quantity", add_now_product_path(@product) %> </p>
 <% end %>
