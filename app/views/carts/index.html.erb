@@ -4,7 +4,7 @@
       <tr>
         <th>product</th>
         <th>quantity</th>
-        <th>total</th>
+        <th>total price</th>
         <th></th>
       </tr>
     </thead>
@@ -14,7 +14,7 @@
           <td><%= Product.find(cart_item.product_id).name %></td>
           <td><%= cart_item.quanity %></td>
           <td><%= cart_item.total %></td>
-          <td type="button" ><%= link_to 'remove_from_cart',   remove_from_cart_path, method: :post%></td> 
+          <td type="button" ><%= link_to 'remove_from_cart',   remove_from_cart_path(cart_item: cart_item.id), method: :post%></td> 
         </tr>
       <% end %>
     </tbody>
@@ -22,3 +22,4 @@
   <hr>
   <h3 style="float:right">Total cart value: <%= current_user.cart.total %></h3>
 </div>
+<%= link_to 'Back', products_path %>

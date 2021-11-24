@@ -49,7 +49,6 @@ class ProductsController < ApplicationController
                                       'Product was successfully updated.')
         redirect_to @product
       else
-        # product_save_failure_response(format, :edit)
         render :edit
       end
   end
