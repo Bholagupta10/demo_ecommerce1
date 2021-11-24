@@ -8,10 +8,13 @@ Rails.application.routes.draw do
       post 'add_now'
     end    
    end
-   resources :carts, only:[:index,:show] do 
+  resources :carts, only:[:index,:show] do 
     member do
       get :new_item
       get 'carts/index',to: 'carts#index'
     end
-    end
+  end
+
+  post :add_to_cart, to: 'carts#add_to_cart'
+  post :remove_from_cart, to: 'carts#remove_from_cart'
 end

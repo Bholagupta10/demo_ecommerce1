@@ -3,6 +3,15 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :products  
   has_one :cart
+
+  after_create :initialize_cart
+
+
+  private
+
+  def initialize_cart
+    Cart.create(user: self)
+  end
 end
 
 

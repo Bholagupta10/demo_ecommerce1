@@ -1,7 +1,7 @@
 <body  style="text-align: center !important; width: 100%; margin: 100% auto; margin: auto !important;">
  <% if current_user.role == 'Buyer' %>
     <p style="text-align:right">
-      <i class="bi bi-cart"> <%= link_to "cart",@product %> </i>
+      <i class="bi bi-cart"> <%= link_to "cart", carts_path %> </i>
       <svg xmlns="http://www.w3.org/2000/svg" width="48" height="50" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
         <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
       </svg>
@@ -35,7 +35,8 @@
         <td><%= product.quanity%></td>
         <td><%= product.brand%></td>
         <td><%= product.price%></td>
-        <td  type="button" ><%= link_to 'Show' , product%></td> 
+        <td type="button" ><%= link_to 'Add to cart' , add_to_cart_path(product_id: product.id), method: :post %></td>
+        <td type="button" ><%= link_to 'Show' , product%></td> 
       </tr>
     <% end %>
   </tbody>
